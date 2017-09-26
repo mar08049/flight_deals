@@ -1,7 +1,13 @@
-class BaliHotelFinder::Hotels
+class BaliHotelFinder::Hotel
   attr_accessor :name, :rating, :location, :address
 
-  def self.hotels
+  def self.hotel
+    self.scrape_hotels
+  end
+
+
+  def self.scrape_hotels
+
     hotel_1 = self.new
     hotel_1.name = "Jamahal Private Resort & Spa"
     hotel_1.rating = "5.0-star Hotel Class"
@@ -32,6 +38,24 @@ class BaliHotelFinder::Hotels
     hotel_5.location = "Denpasar"
     hotel_5.address = "Jalan Pungutan 31 | Denpasar, Indonesia 80228"
 
-  end
+    hotel_6 = self.new
+    hotel_6.name = "The Elysian Boutique Villa Hotel"
+    hotel_6.rating = "5.0-star Hotel Class"
+    hotel_6.location = "Seminyak"
+    hotel_6.address = "Jalan Sari Dewi 18 | Seminyak, Indonesia 80361"
 
+    hotel_7 = self.new
+    hotel_7.name = "Villa de daun"
+    hotel_7.rating = "5.0-star Hotel Class"
+    hotel_7.location = "Legian"
+    hotel_7.address = "Jl. Raya Legian | Legian, Indonesia 80361"
+
+    hotel_8 = self.new
+    hotel_8.name = "Alili Villas Soori"
+    hotel_8.rating = "5.0-star Hotel Class"
+    hotel_8.location = "Tabanan"
+    hotel_8.address = "Banjar Dukuh, Desa Kelating | Tabanan, Indonesia 82111"
+
+    [hotel_1, hotel_2, hotel_3, hotel_4, hotel_5, hotel_6, hotel_7, hotel_8]
+  end
 end

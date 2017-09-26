@@ -20,7 +20,11 @@ class BaliHotelFinder::CLI
         7. Legian
         8. Tabanan
       DOC
-
+      @locations = BaliHotelFinder::Hotel.hotel
+      @locations.each.with_index(1) do |hotel, i|
+        puts "#{i}. #{hotel.name} - #{hotel.location}"
+        puts "#{hotel.rating} - #{hotel.contact}"
+      end
   end
 
   def hotel_list
@@ -29,10 +33,23 @@ class BaliHotelFinder::CLI
     while input != "exit"
       puts "Enter another number or type 'exit'"
       input = gets.strip.downcase
-      if input.to_i > 0
-        puts @hotels[input.to_i - 1]
-      elsif input == "list"
-        list_locations
+      case input
+      when "1"
+        puts hotel_1
+      when "2"
+        puts hotel_2
+      when "3"
+        puts hotel_3
+      when "4"
+        puts hotel_4
+      when "5"
+        puts hotel_5
+      when "6"
+        puts hotel_6
+      when "7"
+        puts hotel_7
+      when "8"
+        puts hotel_8
       else
         goodbye
       end
