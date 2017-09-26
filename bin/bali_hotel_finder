@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "./lib/bali_hotel_finder"
+
+
+BaliHotelFinder::CLI.new.call
