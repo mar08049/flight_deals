@@ -9,7 +9,7 @@ class FlightDeals::CLI
 
   def list_deals
     puts "Welcome to Cole's Flight Deals!"
-      @deals = FlightDeals::Deal.today
+      @deals = FlightDeals::Deals.today
       @deals.each.with_index(1) do |deal, t|
         puts "#{t}. #{deal}"
     end
