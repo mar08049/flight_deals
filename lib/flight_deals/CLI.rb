@@ -12,6 +12,7 @@ class FlightDeals::CLI
     @deals = FlightDeals::Deal.today
     @deals.each.with_index(1) do |deal, t|
       puts "#{t}. #{deal.name}"
+    end
   end
 
   def menu

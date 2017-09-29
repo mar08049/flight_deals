@@ -2,17 +2,22 @@ class FlightDeals::Deal
   attr_accessor :name
 
   def self.today
-    #should return instances of deals.
-  
-    deal_1 = Deal.new
-    deal_1.name = "American – $514"
+    self.scrape_deals
+  end
 
-    deal_2 = Deal.new
-    deal_1.name = "United – $894"
+  def self.scrape_deals
+    deals = []
 
-    deal_3 = Deal.new
-    deal_3.name = "American – $227 (Regular Economy) / $197 (Basic Economy)"
+    deals << self.scrape_url
+    deals
+  end
 
-    [deal_1, deal_2]
+  def self.scrape_url
+
+    doc = Nokogiri::(open("https://www.theflightdeal.com/"))
+    deal = self.new
+    deal.name = doc.search("American – $514").text.strip
+
+
   end
 end
