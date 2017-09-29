@@ -1,7 +1,6 @@
 class FlightDeals::CLI
 
   def call
-    puts "Welcome to Cole's Flight Deals!"
     list_deals
     menu
     goodbye
@@ -9,10 +8,12 @@ class FlightDeals::CLI
 
   def list_deals
     puts "Welcome to Cole's Flight Deals!"
-      @deals = FlightDeals::Deals.today
-      @deals.each.with_index(1) do |deal, t|
-        puts "#{t}. #{deal}"
-    end
+    puts <<-DOC
+      1. American – $514: Los Angeles – Beijing, China. Roundtrip, including all Taxes
+      2. United – $894: Portland – Sydney, Australia. Roundtrip, including all Taxes
+      3. American – $227 (Regular Economy) / $197 (Basic Economy): Phoenix – Raleigh / Durham, North Carolina (and vice versa). Roundtrip, including all Taxes
+    DOC
+    @deals = FlightDeals::Deal.today
   end
 
   def menu
@@ -21,12 +22,13 @@ class FlightDeals::CLI
       puts "Enter the number of the deal you would like more information about or type 'exit'"
       input = gets.strip.downcase
 
-      if input.to_i > 0
-        the_deal = @deals[input.to_i - 1]
-        puts "#{the_deal.name} - #{the_deal.price}"
-        puts "#{the_deal.description}"
-      elsif input == "exit"
-        goodbye
+      case input
+      when "1"
+        puts "More info on deal 1..."
+      when "2"
+        puts "More info on deal 2..."
+      when "3"
+        puts "More info on deal 3..."
       else
         puts "That is not a command, please try again"
       end
