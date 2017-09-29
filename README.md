@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # FlightDeals
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/flight_deals`. To experiment with that code, run `bin/console` for an interactive prompt.
+=======
+# BaliHotelFinder
+
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bali_hotel_finder`. To experiment with that code, run `bin/console` for an interactive prompt.
+>>>>>>> f53b232abd09ba7e2beb149f5a8985048a3d8c74
 
 TODO: Delete this and the text above, and describe your gem
 
@@ -9,7 +15,11 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
+<<<<<<< HEAD
 gem 'flight_deals'
+=======
+gem 'bali_hotel_finder'
+>>>>>>> f53b232abd09ba7e2beb149f5a8985048a3d8c74
 ```
 
 And then execute:
@@ -18,7 +28,11 @@ And then execute:
 
 Or install it yourself as:
 
+<<<<<<< HEAD
     $ gem install flight_deals
+=======
+    $ gem install bali_hotel_finder
+>>>>>>> f53b232abd09ba7e2beb149f5a8985048a3d8c74
 
 ## Usage
 
@@ -32,7 +46,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
+<<<<<<< HEAD
 Bug reports and pull requests are welcome on GitHub at https://github.com/'mar08049-110773'/flight_deals.
+=======
+Bug reports and pull requests are welcome on GitHub at https://github.com/'mar08049-110773'/bali_hotel_finder.
+>>>>>>> f53b232abd09ba7e2beb149f5a8985048a3d8c74
 
 
 ## License

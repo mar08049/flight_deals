@@ -1,5 +1,2 @@
-require "flight_deals/version"
-
-module FlightDeals
-  # Your code goes here...
-end
+require_relative "./flight_deals/version"
+require_relative "./flight_deals/CLI"
