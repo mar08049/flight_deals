@@ -1,11 +1,9 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
-<<<<<<< HEAD
+
 require "flight_deals"
-=======
-require "bali_hotel_finder"
->>>>>>> f53b232abd09ba7e2beb149f5a8985048a3d8c74
+
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.

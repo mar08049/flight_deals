@@ -1,11 +1,18 @@
 class FlightDeals::Deal
-  attr_accessor :name,
+  attr_accessor :name
 
   def self.today
-    puts <<-DOC
-      American – $514: Los Angeles – Beijing, China. Roundtrip, including all Taxes
-      United – $894: Portland – Sydney, Australia. Roundtrip, including all Taxes
-      American – $227 (Regular Economy) / $197 (Basic Economy): Phoenix – Raleigh / Durham, North Carolina (and vice versa). Roundtrip, including all Taxes
-    DOC
+    #should return instances of deals.
+  
+    deal_1 = Deal.new
+    deal_1.name = "American – $514"
+
+    deal_2 = Deal.new
+    deal_1.name = "United – $894"
+
+    deal_3 = Deal.new
+    deal_3.name = "American – $227 (Regular Economy) / $197 (Basic Economy)"
+
+    [deal_1, deal_2]
   end
 end
