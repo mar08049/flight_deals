@@ -24,6 +24,8 @@ class FlightDeals::CLI
       if input.to_i > 0
         selected_deal = @deals[input.to_i-1]
         puts "#{selected_deal.name}"
+        puts "Here is the information you requested:"
+        puts "#{selected_deal.desc}"
       else
         puts "Enter the number of the deal you would like more information about or type 'exit'"
       end

@@ -1,5 +1,5 @@
 class FlightDeals::Deal
-  attr_accessor :name
+  attr_accessor :name, :desc
 
   def self.today
     self.scrape_deals
@@ -9,10 +9,10 @@ class FlightDeals::Deal
     doc = Nokogiri::HTML(open("https://www.theflightdeal.com/"))
 
     deal = self.new
-    deal.name = doc.search("h1.post-title cufon_headings").text.strip
+    deal.name = doc.search("h2.post-title cufon_headings").text.scan(/.*\./)
+    deal.desc = doc.search("p").text
     deal
   end
-
   def self.scrape_deals
    deals = []
 
