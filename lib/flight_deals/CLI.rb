@@ -25,7 +25,7 @@ class FlightDeals::CLI
         selected_deal = @deals[input.to_i-1]
         puts "#{selected_deal.name}"
       else
-        puts "Not sure what you want, type list or exit."
+        puts "Enter the number of the deal you would like more information about or type 'exit'"
       end
     end
   end
