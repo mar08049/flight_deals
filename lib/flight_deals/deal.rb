@@ -9,7 +9,8 @@ class FlightDeals::Deal
     doc = Nokogiri::HTML(open("https://www.theflightdeal.com/"))
 
     deal = self.new
-    deal.name = doc.search("h1.post-title cufon_headings").text.strip
+    deal.name = doc.search("h1.post-title cufon_headings").text.strip.scan(/.*\./)
+    
     deal
   end
 
