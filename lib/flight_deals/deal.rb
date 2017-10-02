@@ -6,16 +6,18 @@ class FlightDeals::Deal
   end
 
   def self.scrape_url
-    @deal_titles = []
+    @deals = []
     doc = Nokogiri::HTML(open("https://www.theflightdeal.com/category/flight-deals/"))
     deal = self.new
     links = doc.search("h1.post-title a")
-    deal.name = links.first.attributes["title"].value.scan(/.*\:/)
-    deal.name.map do |title|
-      @deal_titles << deal.name = title
+    links.each do |link|
+      deal = self.new
+    deal.name = links.attributes["title"].value.scan(/.*\:/)
+    binding.pry
+    @deals << deal
     end
     desc_links = doc.search("h1.post-title a")
-    deal.desc = desc_links.first.attributes["title"]. value.scan(/\:(.*)/).join(" ")
+    deal.desc = desc_links["title"]. value.scan(/\:(.*)/).join(" ")
     deal
   end
   def self.scrape_deals

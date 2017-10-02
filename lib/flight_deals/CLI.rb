@@ -10,8 +10,8 @@ class FlightDeals::CLI
     puts "Welcome to Cole's Flight Deals!"
 
     @deals = FlightDeals::Deal.today
-    @deals.each.with_index(1) do |deal, t|
-      puts "#{t}. #{deal.name}"
+    @deals.each.with_index(1) do |deal, index|
+      puts "#{index}. #{deal.name}"
     end
   end
 
