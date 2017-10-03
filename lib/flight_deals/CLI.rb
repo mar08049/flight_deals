@@ -1,35 +1,33 @@
 class FlightDeals::CLI
 
   def call
-    list_deals
+    list_deal
     menu
     goodbye
   end
 
-  def list_deals
+  def list_deal
     puts "Welcome to Cole's Flight Deals!"
-
+    puts "Here is todays flight deal:"
     @deals = FlightDeals::Deal.today
-    @deals.each.with_index(1) do |deal, index|
-      puts "#{index}. #{deal.name}"
-    end
+    puts "#{deal.name}"
+  end
   end
 
   def menu
     input = nil
-    while input != "exit"
-      puts "Enter the number of the deal you would like more information about or type 'exit'"
+    while input != "no"
+      puts "Would you like to learn more about this deal? Type 'yes' or 'no'"
       input = gets.strip.downcase
 
-      if input.to_i > 0
-        selected_deal = @deals[input.to_i-1]
-        puts "#{selected_deal.name}"
-        puts "Here is the information you requested:"
-        puts "#{selected_deal.desc}"
+      if input == "yes"
+        puts "Here is the info you requested:"
+        puts "#{deal.name}"
+        puts "#{deal.desc}"
       else
-        puts "Enter the number of the deal you would like more information about or type 'exit'"
+        puts "Would you like to learn more about this deal? Type 'yes' or 'no'"
       end
-    end
+
   end
 
   def goodbye
