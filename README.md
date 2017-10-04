@@ -3,9 +3,9 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/flight_deals`. To experiment with that code, run `bin/console` for an interactive prompt.
 =======
-# BaliHotelFinder
+# FlightDeals
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bali_hotel_finder`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/flight-deals`. To experiment with that code, run `bin/console` for an interactive prompt.
 >>>>>>> f53b232abd09ba7e2beb149f5a8985048a3d8c74
 
 TODO: Delete this and the text above, and describe your gem
@@ -56,4 +56,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/'mar08
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
