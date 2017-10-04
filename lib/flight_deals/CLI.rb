@@ -9,9 +9,9 @@ class FlightDeals::CLI
   def list_deal
     puts "Welcome to Cole's Flight Deals!"
     puts "Here is todays flight deal:"
-    @deals = FlightDeals::Deal.today
+    @deal_names = FlightDeals::Deal.today
     puts "#{deal.name}"
-  end
+    
   end
 
   def menu
@@ -22,12 +22,11 @@ class FlightDeals::CLI
 
       if input == "yes"
         puts "Here is the info you requested:"
-        puts "#{deal.name}"
         puts "#{deal.desc}"
       else
         puts "Would you like to learn more about this deal? Type 'yes' or 'no'"
       end
-
+    end
   end
 
   def goodbye
