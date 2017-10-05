@@ -22,7 +22,7 @@ class FlightDeals::CLI
     input = nil
       while input != "exit"
       input = gets.strip.downcase
-      if input.to_i > 0 && input.to_i < 10
+      if input.to_i > 0 && input.to_i < FlightDeals::Deal.all.size
         selected_deal = FlightDeals::Deal.all[input.to_i - 1]
         puts "------------------------------------------------------------------"
         puts "Here is more information on this deal:"
