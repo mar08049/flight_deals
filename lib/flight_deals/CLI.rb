@@ -1,49 +1,44 @@
 class FlightDeals::CLI
 
   def call
-    list_deal
+    FlightDeals::Scraper.scrape_deals
+    list_deals
     menu
-    second_input
     goodbye
   end
 
-  def list_deal
+  def list_deals
     puts "Welcome to Cole's Flight Deals!"
     puts "We offer daily deals for flights out of Houston!"
     puts "-------------------------------"
-    puts "Here is today's flight deal:"
-    @deals = FlightDeals::Deal.today
-    @deals.each do |deal|
-      puts deal.name
+    puts "Here is today's flight deals:"
+    FlightDeals::Deal.all.each_with_index do |deal, index|
+      puts "#{index + 1}. #{deal.name}"
     end
-    puts "-------------------------------"
-    puts "* Would you like to learn more about this deal? Type 'yes', 'no', or 'exit'"
   end
 
   def menu
+    puts "Please select the number of the deal you would like to view or type 'exit'."
     input = nil
+      while input != "exit"
       input = gets.strip.downcase
-
-      if input == "yes"
-        puts "----------------------------"
-        puts "Here is more information on this deal:"
-        @deals.each do |deal|
-          puts deal.desc
-        end
+      if input.to_i > 0 && input.to_i < 10
+        selected_deal = FlightDeals::Deal.all[input.to_i - 1]
         puts "------------------------------------------------------------------"
+        puts "Here is more information on this deal:"
+        puts selected_deal.name
+        puts selected_deal.desc
         puts "For more information go to https://escapehouston.com/category/cheap-flights-from-houston/"
+        puts "------------------------------------------------------------------"
+        puts "Please select the number of the deal you would like to view or type 'exit'."
       elsif input == "no"
         puts "------------------------------------------------------------------"
         puts "For more information go to https://escapehouston.com/category/cheap-flights-from-houston/"
       else
-
+        puts "Invalid response, Please select the number of the deal you would like to view or type 'exit'."
+        
+      end
     end
-  end
-
-  def second_input
-    input_2 = nil
-    puts "* When you are finished exploring type 'done'."
-    input_2 = gets.strip.downcase
   end
 
   def goodbye
